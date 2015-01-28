@@ -1,0 +1,25 @@
+<div class="news-list cf">
+  {{#if items}}
+
+  {{#each items}}
+    <article class="news teaser teaserimage cf {{#if @last}}last{{/if}}">
+      <a href="{{url:item}}" class="image">
+        {{#if images.[0].file}}
+          <img src="{{images.[0].file.url}}" />
+        {{else}}
+          <img src="{{theme:statics}}/img/default/news.png" />
+        {{/if}}
+      </a>
+      <p class="date">{{moment:date date.from "MMM, Do YYYY"}}</p>
+      <h3><a href="{{url:item}}">{{{title}}}</a></h3>
+      <p class="intro">{{{shortdescription}}}</p>
+      <a class="more" href="{{url:item}}">{{i18n:t "more info"}} <i class="readmore"></i></a>
+    </article>
+  {{/each}}
+
+  {{collection:pager}}
+  {{else}}
+     <h3>{{i18n:t "No Events matching your query."}}</h3>
+     <p>{{i18n:t "Sorry, at the moment we don't have planned any events for your selected date."}}</p>
+  {{/if}}
+</div>

@@ -1,0 +1,15 @@
+<div class="products collection watchlist grid">
+  {{#if items}}
+  <div class="row">
+    {{#foreach items columns="3"}}
+      <div class="col col-md-4">
+        {{> smallfamily/collections/watchlist-item}}
+      </div>
+    {{/foreach}}
+  </div>
+  {{else}}
+  <div>
+    {{i18n:t "No items in watchlist"}}
+  </div>
+  {{/if}}
+</div>

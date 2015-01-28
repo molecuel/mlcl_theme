@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="ngBoilerplate" ng-controller="AppCtrl">
+  <head>
+    <title ng-bind="pageTitle"></title>
+
+    <base href="/" />
+
+    <!-- social media tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@inspirationlabs">
+    <meta name="twitter:title" content="inspirationlabs">
+    <meta name="twitter:description" content="Molecuel Content Management System">
+    <meta name="twitter:creator" content="@inspirationlabs">
+    <meta name="twitter:image:src" content="">
+
+    <meta property="og:title" content="inspirationlabs" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://inspirationlabs.com" />
+    <meta property="og:image" content="" />
+    <meta property="og:description" content="">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- font awesome from BootstrapCDN -->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+    <!-- compiled JavaScript -->
+    <script type="text/javascript" src="{{theme:statics}}vendor/angular/angular.js"></script>
+    <script type="text/javascript" src="{{theme:statics}}vendor/angular-ui-router/release/angular-ui-router.js"></script>
+    <script type="text/javascript" src="{{theme:statics}}vendor/angular-resource/angular-resource.js"></script>
+    <script type="text/javascript" src="{{theme:statics}}src/app/about/about.js"></script>
+    <script type="text/javascript" src="{{theme:statics}}src/app/app.js"></script>
+    <script type="text/javascript" src="{{theme:statics}}src/app/home/home.js"></script>
+    <script type="text/javascript" src="{{theme:statics}}src/common/plusOne/plusOne.js"></script>
+    <script type="text/javascript" src="{{theme:statics}}templates-common.js"></script>
+    <script type="text/javascript" src="{{theme:statics}}templates-app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="" ui-view="main">{{{body}}}</div>
+    <footer class="footer">
+    </footer>
+  </body>
+</html>

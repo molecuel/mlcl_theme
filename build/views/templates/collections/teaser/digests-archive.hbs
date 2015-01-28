@@ -1,0 +1,25 @@
+<div class="digests archive cf">
+  <div class="row">
+    {{#if years}}
+      <div class="col-md-12">
+        <h2 class="bb">{{i18n:t "Archive"}}</h2>
+        <div class="row">
+          {{#each years}}
+            <div class="col-md-3">
+              <h3>{{year}}</h3>
+              <ul>
+              {{#each items}}
+                <li><a href="">{{title}}</a></li>
+              {{/each}}
+              </ul>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    {{else}}
+      <div class="col-md-12">
+        <h3>{{i18n:t "no digest years available"}}</h3>
+      </div>
+    {{/if}}
+  </div>
+</div>

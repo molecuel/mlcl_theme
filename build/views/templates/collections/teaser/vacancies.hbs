@@ -1,0 +1,12 @@
+<div class="collection-list cf">
+  {{#each items}}
+    <article class="vacancy teaser cf">
+      <p><span class="date">{{moment:date publishdate "MMM, Do YYYY"}}</span> | <span class="location">{{location}}</span></p>
+      <h3><a href="{{url:item}}">{{title}}</a></h3>
+      <p class="intro">{{{shortdescription}}}</p>
+      <a href="{{url:item}}" class="more">{{i18n:t "more info"}} <i class="readmore"></i></a>
+    </article>
+  {{/each}}
+
+  {{collection:pager}}
+</div>

@@ -1,0 +1,17 @@
+<div class="teaser featured">
+  <div class="row">
+    {{#each items}}
+      <div class="col-md-6">
+        <article>
+          <a href="{{url}}">
+            <figure class="news-front">
+              <div><img class="img" src="{{images.[0].src}}" /></div>
+              <figcaption><p>{{teaser.title}} <i class="readmore"></i></p></figcaption>
+            </figure>
+          </a>
+        </article>
+      </div>
+    {{/each}}
+    </div>
+  </div>
+</div>

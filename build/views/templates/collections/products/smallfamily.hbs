@@ -1,0 +1,12 @@
+<div class="product-collection">
+  {{#if title}}
+    <h3 class="bb">{{title}}</h3>
+  {{/if}}
+  <div class="row">
+    {{#foreach items columns="3"}}
+      <div class="col-md-4">
+        {{> smallfamily/teaser}}
+      </div>
+    {{/foreach}}
+  </div>
+</div>

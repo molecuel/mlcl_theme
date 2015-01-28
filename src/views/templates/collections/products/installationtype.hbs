@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-md-12">
+    <h2 class="bb">{{i18n:t "Installation"}}</h2>
+
+    <div class="product-collection">
+      <div class="row">
+        {{#foreach items columns="3"}}
+          <div class="item small-family col-md-4">
+            <a href="{{url}}" class="product-image">
+              <figure>
+                {{#if photo.url}}
+                  <img src="{{theme:statics}}/img/loader.gif" data-src="{{photo.url}}" />
+                {{else}}
+                  <img src="{{theme:statics}}/img/installationtypes/{{key}}.png" />
+                {{/if}}
+              </figure>
+              <h3>{{title}}</h3>
+            </a>
+          </div>
+        {{/foreach}}
+      </div>
+    </div>
+  </div>
+</div>

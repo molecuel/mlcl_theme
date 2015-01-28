@@ -1,0 +1,47 @@
+<div class="form filter cf row">
+  <div class="col-md-4">
+    <div class="pull-left checkbox-wrap">
+      <div class="checkbox first">
+      <label>
+        <input type="checkbox" id="offices" checked="checked" class="location-type" value="1"> {{i18n:t "Show LT-Offices"}}
+      </label>
+    </div>
+    </div>
+    <div class="pull-left checkbox-wrap">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" id="distributors" checked="checked" class="location-type" value="2"> {{i18n:t "Show Distributors"}}
+        </label>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-md-2">
+    <button type="button" class="btn btn-sm icon locate-me form-item" id="locateMe"><span class="glyphicon glyphicon-screenshot"></span> {{i18n:t "Locate Me"}}</button>
+  </div>
+
+  <div class="col-md-3">
+    <div class="input-group locate form-item input-group-sm input-group-select2">
+      <select class="select2 form-control input-sm" id="country">
+        <option value="">{{i18n:t "Country"}}</option>
+        {{#each countries}}
+          <option>{{this}}</option>
+        {{/each}}
+      </select>
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" id="buttonSearch"></span></button>
+      </span>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="input-group form-item input-group-sm">
+      <input type="text" class="form-control" placeholder="{{i18n:t "Country / City / Zip Code"}}" id="search">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" id="buttonSearch"></span></button>
+      </span>
+    </div>
+  </div>
+
+</div>

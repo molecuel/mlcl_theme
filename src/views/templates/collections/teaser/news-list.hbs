@@ -1,0 +1,19 @@
+<div class="news-list cf">
+  {{#each items}}
+    <article class="news teaser teaserimage cf">
+      <a href="{{url:item}}" class="image">
+        {{#if images.[0]}}
+        <img src="{{images.[0].file.url}}" />
+        {{else}}
+        <img src="{{theme:statics}}/img/default/news.png" />
+        {{/if}}
+      </a>
+      <p class="date">{{moment:date publishdate "MMM, Do YYYY"}}</p>
+      <h3><a href="{{url:item}}">{{title}}</a></h3>
+      <p class="intro">{{{shortdescription}}}</p>
+      <a href="{{url:item}}" class="more">{{i18n:t "more info"}} <i class="readmore"></i></a>
+    </article>
+  {{/each}}
+
+  {{collection:pager}}
+</div>

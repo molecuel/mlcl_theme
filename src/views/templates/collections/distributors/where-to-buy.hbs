@@ -1,0 +1,33 @@
+{{#each items}}
+  <div id="distributor-{{_id}}" class="distributor teaser cf bb" data-lat="{{location.geo.lat}}" data-lng="{{location.geo.lon}}">
+    <i class="open-status closed"></i>
+    <a href="" class="logo">
+      {{#if noimg.src}}
+        <div class="img" style="background-image: url({{img.src}});"></div>
+        <div class="img hover" style="background-image: url({{img.srcHover}});"></div>
+      {{else}}
+        {{#if logo1.[0].url}}
+          <img src="{{logo1.[0].url}}" />
+          <img src="{{img.srcHover}}" class="hover"/>
+        {{else}}
+          <img src="http://placehold.it/89x64" />
+        {{/if}}
+      {{/if}}
+    </a>
+    <div class="vcard">
+      <h4><a href="">{{title}}</a></h4>
+      <p>{{#if location.streetnumber}}<span class="streetnumber">{{location.streetnumber}}</span>, {{/if}} <span class="streetname">{{location.streetname}}</span><br><span class="zip">{{location.zipcode}}</span> <span class="city">{{location.city}}</span>, <span class="country">{{location.country}}</span></p>
+      <div class="details">
+        <p><span class="label">{{i18n:t "Phone"}}:</span><span class="tel">{{phone}}</span></p>
+        <p><span class="label">{{i18n:t "Website"}}:</span><a class="url" href="{{web}}">{{web}}</a></p>
+        <p><span class="label">{{i18n:t "E-mail"}}:</span><a class="email" href="mailto:{{email}}">{{email}}</a></p>
+      </div>
+    </div>
+
+    <div class="tools">
+      <a href="https://maps.google.com?daddr={{location.geo.lat}},{{location.geo.lon}}" target="_blank" class="icon direction"><i></i>{{i18n:t "Get Directions"}}</a>
+      <a href="/vcard/{{_id}}" class="icon downloadvcard"><i></i>{{i18n:t "Download v-card"}}</a>
+      <a href="/whishlist/{{_id}}" class="icon whishlist"><i></i>{{i18n:t "Send watchlist"}}</a>
+    </div>
+  </div>
+{{/each}}

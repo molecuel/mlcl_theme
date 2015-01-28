@@ -1,0 +1,31 @@
+<div class="collection products installation-manuals">
+  {{#if title}}
+    <h3 class="bb">{{title}}</h3>
+  {{/if}}
+  <div class="row">
+    {{#foreach items columns="3"}}
+      <div class="item small-family col-md-4">
+        <a href="{{url}}" class="product-image">
+          <figure>
+            {{#if photo.url}}
+              <img src="{{theme:statics}}/img/loader.gif" data-src="/image/smallfamily_thumbs{{photo.url}}" />
+            {{else}}
+              <img src="http://placehold.it/222x170/E8117F&text=photo.filepath" />
+            {{/if}}
+          </figure>
+          <h3>{{title}}</h3>
+        </a>
+
+        <div class="downloads">
+        {{#each installinstructions}}
+          {{#if file}}
+            <div class="file pdf">
+              <a href="{{file.url}}" target="_blank"><i class="icon"></i>{{title}} <span class="info">({{filesize file}})</span></a>
+            </div>
+          {{/if}}
+        {{/each}}
+        </div>
+      </div>
+    {{/foreach}}
+  </div>
+</div>

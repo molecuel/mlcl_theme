@@ -1,0 +1,28 @@
+<div class="catalogues catalogues-featured cf">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>{{i18n:t "Download Catalogues"}}</h2>
+    </div>
+    {{#if items}}
+      {{#each items}}
+        <div class="col-md-3">
+          <article class="catalogue teaser">
+            <a href="{{download.url}}" target="_blank">
+              {{#if thumbnail.url}}
+                <img src="{{thumbnail.url}}" />
+              {{else}}
+                <img src="{{theme:statics}}/img/default/catalogue.png" />
+              {{/if}}
+              <h4>{{title}}</h4>
+              <p>{{i18n:t "Download"}} {{filesize download}}</p>
+            </a>
+          </article>
+        </div>
+      {{/each}}
+    {{else}}
+      <div class="col-md-12">
+        <h3>{{i18n:t "no catalogues available"}}</h3>
+      </div>
+    {{/if}}
+  </div>
+</div>

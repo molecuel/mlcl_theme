@@ -1,0 +1,24 @@
+<div class="applications collection">
+  <div class="row">
+    {{#foreach items columns="3"}}
+      <div class="item teaser col-md-4">
+        <a href="{{lang:link url}}" class="product-image">
+          <figure>
+            {{#if photo.url}}
+              <img src="{{theme:statics}}/img/loader.gif" data-src="{{photo.url}}" />
+            {{else}}
+              <img src="/public/applications/{{key}}.jpg" />
+            {{/if}}
+          </figure>
+          <h3>{{title}}</h3>
+        </a>
+
+        {{#if extendedtitle.text}}
+          <p class="prose">{{extendedtitle.text}}</p>
+        {{else}}
+          <p class="">{{i18n:t "no extendedtitle.text found on SmallFamily"}}</p>
+        {{/if}}
+      </div>
+    {{/foreach}}
+  </div>
+</div>
