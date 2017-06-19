@@ -1,6 +1,14 @@
-# mlcl_theme
-A blueprint for molecuel themes and frontend applications based on molecuel
+# @molecuel/mlcl_theme [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage percentage][coveralls-image]][coveralls-url]
 
-***
+# Theme module for the Molecuel Framework
 
-mlcl_theme is a blueprint for molecuel themes. It ships as a build framework for frontend applications to ease the composition of frontend libraries and their dependencies. mlcl_theme is based on the "opinionated kickstarter" ngbp (https://github.com/ngbp/ngbp) adopted for the use within the mlcl infrastructure: less css generation, bower js integration, grunt workflows, layouts & templates based on handlebars packed into a best practice directory structure.
+@molecuel/mlcl_theme is the theming module for the molecuel application framework. It provides a dependency injectional approach for registering themes.
+
+[npm-image]: https://badge.fury.io/js/%40molecuel%2Fmlcl_theme.svg
+[npm-url]: https://npmjs.org/package/@molecuel/mlcl_theme
+[travis-image]: https://travis-ci.org/molecuel/mlcl_theme.svg?branch=master
+[travis-url]: https://travis-ci.org/molecuel/mlcl_theme
+[daviddm-image]: https://david-dm.org/molecuel/mlcl_theme.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org/molecuel/mlcl_theme
+[coveralls-image]: https://coveralls.io/repos/molecuel/mlcl_theme/badge.svg
+[coveralls-url]: https://coveralls.io/r/molecuel/mlcl_theme
