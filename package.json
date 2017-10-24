@@ -1,7 +1,7 @@
 {
-  "name": "mlcl_theme",
-  "version": "0.0.1",
-  "main": "dist/index.js",
+  "name": "@molecuel/theme",
+  "version": "0.0.3",
+  "main": "lib/index.js",
   "scripts": {
     "start": "node dist/index.js",
     "tslint": "./node_modules/.bin/tslint --project tsconfig.json",
@@ -53,12 +53,11 @@
     "remap-istanbul": "^0.9.3",
     "tslint": "^5.0.0",
     "typedoc": "^0.5.1",
-    "typescript": "^2.2.1"
+    "typescript": "^2.4.0"
   },
   "dependencies": {
     "@molecuel/core": "^2.0.6",
     "@molecuel/di": "^0.2.6",
-    "@reactivex/rxjs": "^5.2.0",
     "config": "^1.24.0",
     "handlebars": "^4.0.10",
     "handlebars-helpers": "^0.8.2",

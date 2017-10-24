@@ -20,68 +20,59 @@ export class MlclTheme {
         return Object.keys(MlclTheme.getStore());
     }
 
-    protected static getClass(name) {
-        const store = MlclTheme.getStore();
-        return store[name].class;
-    }
-
-    protected name: string;
-    protected store: any;
-    private themes: any;
-    private templatePath: string;
-    private handlebars: any;
-
-    public constructor(name, options) {
-        options = options || {};
-        this.name = name;
-        this.templatePath = options.templatePath;
-    }
-
-    public getInstance(name) {
-        const store = MlclTheme.getStore();
-        if (store[name] && store[name].class) {
-            return new store[name].class(name);
-        } else {
-            return undefined;
+    public async registerTheme(name, options: any) {
+        const theme: any = {
+            partials: {},
+            templates: {},
+        };
+        if (!options.engine) { // later possibly other engines could be used..
+            const handlebars = Handlebars.create();
+            HandlebarsHelpers({handlebars});
+            theme.handlebars = handlebars;
         }
-    }
-
-    public async render(data) {
-        const templates = await this.loadTemplates();
-        return templates["views\\index.html"](data);
-    }
-
-    protected getTemplates() {
-        const store = MlclTheme.getStore();
-        return store[this.name].templates;
-    }
-
-    protected getEngine() {
-        const store = MlclTheme.getStore()[this.name];
-        if (!store.handlebars) {
-            store.handlebars = Handlebars.create();
-            HandlebarsHelpers({handlebars: store.handlebars});
-        }
-        return store.handlebars;
-    }
-
-    protected async loadTemplates() {
-        const templates = this.getTemplates();
-        if (!Object.keys(templates).length) {
-            const files = await recursiveReaddir(this.templatePath);
-            for (const p of files) {
-                const filename = path.relative(this.templatePath, p);
-                templates[filename] = this.getEngine().compile(fs.readFileSync(p, "utf-8"));
+        const files = await recursiveReaddir(options.path);
+        for (const p of files) {
+            const relative = path.relative(options.path, p);
+            const info = path.parse(p);
+            const content = fs.readFileSync(p, "utf-8");
+            const parts = relative.split(path.sep);
+            const filepart = parts.pop();
+            const types = ["partials", "layouts"];
+            let top;
+            if (parts.length) {
+                top = parts[0];
+            }
+            let filename;
+            if (types.indexOf(top) > -1) {
+                parts.shift(); // throw away first part
+            }
+            filename = path.join(parts.join(path.sep), info.name).replace(/\\/g, "/");
+            if (theme.handlebars) {
+                if (top === "partials") {
+                    theme.partials[filename] = content;
+                    theme.handlebars.registerPartial(filename, content);
+                } else {
+                    theme.templates[filename] = theme.handlebars.compile(content);
+                }
             }
         }
-        return templates;
+        MlclTheme.getStore()[name] = theme;
     }
 
-}
-
-export function theme(themeName: string) {
-    return (target: any) => {
-        const store = MlclTheme.getStore();
-        store[themeName] = {class: target, templates: {}, handlebars: undefined};
-    };
+    public async render(data, options) {
+        const theme = MlclTheme.getStore()[options.name];
+        const file = options.file;
+        if (!options) {
+            throw new Error("options parameter not defined");
+        }
+        if (!theme) {
+            throw new Error("theme " + options.name + " not defined");
+        }
+        if (!file || !theme.templates[file]) {
+            throw new Error("template file " + file + "not defined");
+        }
+        if (theme && theme.templates[file]) {
+            return theme.templates[file](data);
+        }
+    }
 }

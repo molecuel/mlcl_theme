@@ -1,0 +1,8 @@
+{{#each items}}
+<li class="{{class}}">
+  {{title}}
+  {{#if items}}
+    <ul>{{> list/list this}}</ul>
+  {{/if}}
+</li>
+{{/each}}
