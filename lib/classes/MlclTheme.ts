@@ -59,6 +59,10 @@ export class MlclTheme {
         MlclTheme.getStore()[name] = theme;
     }
 
+    public registerHelper(name, helper) {
+        // @todo
+    }
+
     public async render(data, options) {
         const theme = MlclTheme.getStore()[options.name];
         const file = options.file;
