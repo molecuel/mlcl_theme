@@ -3,7 +3,7 @@
   "version": "0.0.3",
   "main": "lib/index.js",
   "scripts": {
-    "start": "node dist/index.js",
+    "start": "node lib/index.js",
     "tslint": "./node_modules/.bin/tslint --project tsconfig.json",
     "tslint_test": "./node_modules/.bin/tslint --project tsconfig.test.json",
     "ts": "./node_modules/.bin/tsc -p .",
