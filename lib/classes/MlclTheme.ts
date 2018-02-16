@@ -59,8 +59,11 @@ export class MlclTheme {
         MlclTheme.getStore()[name] = theme;
     }
 
-    public registerHelper(name, helper) {
-        // @todo
+    public registerHelper(name, helpername, func) {
+      const theme = MlclTheme.getStore()[name];
+      if (theme.handlebars) {
+        theme.handlebars.registerHelper(helpername, func);
+      }
     }
 
     public async render(data, options) {
