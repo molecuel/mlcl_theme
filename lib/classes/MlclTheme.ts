@@ -49,10 +49,19 @@ export class MlclTheme {
             filename = path.join(parts.join(path.sep), info.name).replace(/\\/g, "/");
             if (theme.handlebars) {
                 if (top === "partials") {
-                    theme.partials[filename] = content;
-                    theme.handlebars.registerPartial(filename, content);
-                } else {
-                    theme.templates[filename] = theme.handlebars.compile(content);
+                  theme.partials[filename] = content;
+                  theme.handlebars.registerPartial(filename, content);
+                } else if (top === "helpers") {
+                  const helpers = require(p);
+                  if (helpers) {
+                    for (const helpername of Object.keys(helpers)) {
+                      if (typeof helpers[helpername] === "function") {
+                        theme.handlebars.registerHelper(helpername, helpers[helpername]);
+                      }
+                    }
+                  }
+                } else if (top === "layouts" || top === "views") {
+                  theme.templates[filename] = theme.handlebars.compile(content);
                 }
             }
         }
