@@ -1,0 +1,70 @@
+{
+  "assets_baseurl": "https://s3-eu-west-1.amazonaws.com/sx-cdn.sixt.io/mailing-templates/",
+  "black": "#111119",
+  "dark_gray": "#979797",
+  "light_gray": "#eeeeee",
+  "orange": "#ff5f00",
+  "temp_block_title_pickup": "Informationen zur Fahrzeugabholung",
+  "temp_block_title_return": "Fahrzeugrückgabe",
+  "temp_signature": "Ihr Sixt Team",
+  "temp_value_banner": "Im Anhang erhalten Sie eine Kopie Ihres Mietvertrags",
+  "temp_wish": "Wir wünschen Ihnen eine gute Fahrt!",
+  "text_pickup": "Sie haben soeben Ihr Fahrzeug abgeholt",
+  "text_previous_damage": "Bevor Sie die Station verlassen, prüfen Sie das Fahrzeug bitte auf etwaige, noch nicht eingetragene, Vorschäden und melden Sie diese entweder direkt bei der Abholstation oder der Sixt Hotline.",
+  "text_return": "Wie in Ihrem Mietvertrag vermerkt, geben Sie das Fahrzeug an folgender Station zurück:",
+  "subject": "Your booking is confirmed confirmation!",
+  "white": "#ffffff",
+  "title": "titel",
+  "reservation_nmb": "123456789",
+  "email_subject": "Your booking confirmation",
+  "name": "Max Mustermann",
+
+  "vehicle_text": "Fahrzeug",
+  "reg_number_text": "Kennzeichen",
+  "pickup_text": "Abholort",
+  "damages_text": "Das Fahrzeug weist folgende Schäden auf:",
+
+  "has_vehicle_model": true,
+  "car_group": "Car group",
+  "car_group_example": "Car group example",
+  "car_group_title": "Car group title",
+
+  "subtitle": "My subtile",
+  "descriptions": [
+    ["ley", "line 1"],
+    ["ley 1", "line 2"],
+    ["ley 2", "line 3"]
+  ],
+  "description_lines": [
+    "item 1",
+    "item 2"
+  ],
+  "booking": {
+    "selectedPickup": {
+      "id": null,
+      "label": "Berlin Tegel Airport",
+      "address": "Zufahrt zum Flughafen Tegel, 13405 Berlin, Germany",
+      "category": "airport",
+      "placeId": "ChIJVVVVVflTqEcR6iq_Z319uWQ",
+      "terms": [
+        ""
+      ],
+      "location": {
+        "latitude": 52.5588327,
+        "longitude": 13.2884374
+      },
+      "isAddressValid": true,
+      "minimumBookingTime": 60,
+      "isAreaActive": true,
+      "addressComponents": {
+        "route": "Zufahrt zum Flughafen Tegel",
+        "sublocality_level_1": "Bezirk Reinickendorf",
+        "locality": "Berlin",
+        "administrative_area_level_1": "Berlin",
+        "country": "Germany",
+        "postal_code": "13405"
+      },
+      "timezoneOffsetGMT": 1
+    }
+  }
+}
